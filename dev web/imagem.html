@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+    <style>
+        /* Reset básico e fontes */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Container Grid Moderno */
+        .gallery-grid {
+            display: grid;
+            /* Cria colunas automáticas que nunca ficam menores que 250px */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; /* Espaço uniforme entre os itens */
+            width: 100%;
+            max-width: 1200px; /* Limite de largura para telas muito grandes */
+        }
+
+        /* Card da Imagem */
+        .img-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            
+            aspect-ratio: 4/3; /* Mantém todos os cards com a mesma proporção */
+        }
+
+        
+
+        /* Imagem em si */
+        .img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Preenche o card sem distorcer */
+            display: block;
+           
+        }
+
+      
+
+        /* Responsividade para telas muito pequenas */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; } /* 1 coluna no celular */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Apresentação de Imagens</h1>
+
+    <div class="gallery-grid">
+        <!-- As imagens agora estão dentro de "cards" para melhor estilo -->
+        <div class="img-card">
+            <img src="img/folhas.png" alt="Folhas verdes">
+        </div>
+        
+        <div class="img-card">
+            <img src="img/hero-fallback.jpg" alt="Imagem de destaque">
+        </div>
+        
+        <div class="img-card">
+            <img src="img/foto-1200.jpg" alt="Foto paisagem">
+        </div>
+        
+        <div class="img-card">
+            <img src="img/html5.png" alt="Logo HTML5">
+        </div>
+    </div>
+
+</body>
+</html>   
