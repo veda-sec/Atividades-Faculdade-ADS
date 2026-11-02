@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fale com a gente · meu site na mão</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>meu site na mão</h1>
+  <nav>
+    <a href="index.html">início</a>
+    <a href="passo-a-passo.html">passo a passo</a>
+    <a href="dicas.html">dicas</a>
+    <a href="fale-com-a-gente.html">fale com a gente</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Fale com a gente</h2>
+  <p>Quer tirar uma dúvida, propor uma parceria, mandar uma proposta ou uma recomendação para o site? É só preencher aqui embaixo.</p>
+
+  <form id="form-contato" onsubmit="enviarMensagem(event)">
+    <p>
+      <label for="nome">Nome</label><br>
+      <input type="text" id="nome" name="nome" required>
+    </p>
+
+    <p>
+      <label for="assunto">Sobre o que você quer falar?</label><br>
+      <select id="assunto" name="assunto">
+        <option value="Dúvida">Quero tirar uma dúvida</option>
+        <option value="Parceria">Parceria</option>
+        <option value="Proposta">Proposta</option>
+        <option value="Recomendação">Recomendação para o site</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="mensagem">Mensagem</label><br>
+      <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+    </p>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p>As mensagens chegam em <a href="mailto:crieseusite123@gmail.com">crieseusite123@gmail.com</a>.</p>
+</main>
+
+<footer>
+  Feito por João Luis Siqueira de Souza.
+</footer>
+
+<script>
+function enviarMensagem(evento) {
+  evento.preventDefault();
+  var nome = document.getElementById('nome').value;
+  var assunto = document.getElementById('assunto').value;
+  var mensagem = document.getElementById('mensagem').value;
+
+  var linha = assunto + ' - ' + nome;
+  var corpo = 'Nome: ' + nome + '\n\n' + mensagem;
+
+  window.location.href = 'mailto:crieseusite123@gmail.com'
+    + '?subject=' + encodeURIComponent(linha)
+    + '&body=' + encodeURIComponent(corpo);
+}
+</script>
+
+</body>
+</html>
