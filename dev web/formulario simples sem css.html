@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Contato</title>
+</head>
+<body>
+
+    <form action="/processar-contato" method="POST">
+
+        <fieldset>
+            <legend>Entre em Conosco</legend>
+
+         
+            <p>
+                <label for="nome">Nome Completo:</label><br>
+                <input type="text" id="nome" name="nome" required>
+            </p>
+
+         
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+           
+            <p>
+                <label for="telefone">Telefone (Opcional):</label><br>
+                <input type="tel" id="telefone" name="telefone">
+            </p>
+
+            
+            <p>
+                <label for="assunto">Assunto:</label><br>
+                <select id="assunto" name="assunto" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="elogio">Elogio</option>
+                </select>
+            </p>
+
+          
+            <p>
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            </p>
+
+          
+            <p>
+                <button type="submit">Enviar</button>
+            </p>
+        </fieldset>
+    </form>
+
+</body>
+</html>   
